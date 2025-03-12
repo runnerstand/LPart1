@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Coursework
+namespace LPart1
 {
     class Program
     {
@@ -20,13 +20,20 @@ namespace Coursework
             // Object creation
             StringProcessing processing = new StringProcessing(inputString, shiftValue);
 
-            // Display stored values
-            Console.WriteLine($"Stored String: {processing.S}");
-            Console.WriteLine($"Stored Shift Value: {processing.N}");
+            //Call Print method
+            processing.Print();
 
-            // Call the ShiftString() method and display result
-            string shiftedString = processing.ShiftString();
-            Console.WriteLine($"Shifted String: {shiftedString}");
+            //Call outputCode method and display the ASCII values
+            int[] asciiValues = processing.OutputCode();
+            Console.WriteLine("ASCII values: ");
+            foreach (int value in asciiValues)
+            {
+                Console.Write(value + " ");
+            }
+            Console.WriteLine();
+
+            processing.InputCode();
+            processing.Print();
         }
     }
 }

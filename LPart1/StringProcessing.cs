@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Coursework
+namespace LPart1
 {
     class StringProcessing
     {
@@ -19,26 +19,34 @@ namespace Coursework
             N = shiftValue;
         }
 
-        // Simplified method to shift the string
-        public string ShiftString()
+        // Print Method
+        public void Print()
         {
-            string result = ""; // Start with an empty string
+            Console.WriteLine($"Stored String: {S}");
+            Console.WriteLine($"Stored Shift Value: {N}");
+        }
 
-            foreach (char c in S) // Loop through each character
+        // InputCode Method (Updates S and N with new values)
+        public void InputCode()
+        {
+            Console.Write("Enter a new string: ");
+            S = Console.ReadLine();
+
+            Console.Write("Enter a new shift value: ");
+            N = int.Parse(Console.ReadLine());
+        }
+
+        // OutputCode Method (Returns ASCII values of each character in S)
+        public int[] OutputCode()
+        {
+            int[] asciiValues = new int[S.Length]; // Create an array to store ASCII values
+
+            for (int i = 0; i < S.Length; i++)
             {
-                if (char.IsLetter(c)) // Only shift letters
-                {
-                    char start = char.IsUpper(c) ? 'A' : 'a';
-                    char shiftedChar = (char)(start + (c - start + N) % 26);
-                    result += shiftedChar; // Append shifted character
-                }
-                else
-                {
-                    result += c; // Keep non-letter characters unchanged
-                }
+                asciiValues[i] = (int)S[i]; // Convert each character to ASCII
             }
 
-            return result; // Return the final shifted string
+            return asciiValues; // Return the array
         }
     }
 }
