@@ -10,7 +10,7 @@ namespace LPart1
     {
         static void Main(string[] args)
         {
-            // Input
+            // Input fields
             Console.Write("Enter a string: ");
             string inputString = Console.ReadLine();
 

@@ -8,7 +8,7 @@ namespace LPart1
 {
     class StringProcessing
     {
-        // Public fields
+        // Public fielders
         public string S;
         public int N;
 
