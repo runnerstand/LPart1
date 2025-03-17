@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System;
+
 namespace LPart1
 {
     class Program
@@ -20,18 +22,27 @@ namespace LPart1
             // Object creation
             StringProcessing processing = new StringProcessing(inputString, shiftValue);
 
-            //Call Print method
+            // Call Print method
             processing.Print();
 
-            //Call outputCode method and display the ASCII values
+            // Call OutputCode method and display the ASCII values
             int[] asciiValues = processing.OutputCode();
             Console.WriteLine("ASCII values: ");
             foreach (int value in asciiValues)
             {
                 Console.Write(value + " ");
             }
-            Console.WriteLine();
+            Console.WriteLine(); // Move to the next line
 
+            // Call Sort() method and display the sorted string
+            string sortedString = processing.Sort();
+            Console.WriteLine($"Sorted String: {sortedString}");
+
+            // Call Encode() method and display the encoded string
+            string encodedString = processing.Encode();
+            Console.WriteLine($"Encoded String: {encodedString}");
+
+            // Call InputCode method
             processing.InputCode();
             processing.Print();
         }
